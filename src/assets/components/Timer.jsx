@@ -1,6 +1,8 @@
 import React from "react";
 let timeOut;
+// ----------------- First Exersice----------------------
 class Timer extends React.Component {
+
   constructor() {
     super();
     this.state = {
@@ -26,8 +28,8 @@ class Timer extends React.Component {
     
     return (
       <div>
-        <h1>شمارش معکوس</h1>
         <p>{this.state.count}</p>
+        <button onClick={this.props.eventClick}>Click</button>
       </div>
     );
   }
