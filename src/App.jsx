@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Hello from "./assets/components/Hello";
 import Timer from "./assets/components/Timer";
 import Cornometr from "./assets/components/Cornometr";
-import TimerList from "./assets/components/ListTimer";
+import { TestContext } from "./assets/context/testContext";
+import TimerList from "./assets/components/TimerList";
 // import Cornometr from "./assets/components/Cornometr";
 // let intrval;
 // class App extends React.Component {
@@ -45,7 +46,7 @@ import TimerList from "./assets/components/ListTimer";
 const App = () => {
   const [title, setTitle] = useState("Hello dear user");
   const [isLight, setIsLight] = useState(false);
-  const [timeArr, setTimeArr] = useState(["00:05:37", "00:10:37"]);
+  const [timeArr, setTimeArr] = useState(["11:00:12"]);
   // const handleSetTitle = () => {
   //   setTitle("Welcome to your website");
   // };
@@ -58,23 +59,53 @@ const App = () => {
   };
   return (
     <div className="components">
-      <div
-        className="box"
-        style={{
-          background: isLight ? "#fff" : "#000",
-          color: isLight ? "#000" : "#fff",
+      {/* context is TestContext.provider */}
+      {/* here is for single value context */}
+      {/* <TestContext.Provider value={'red'}>
+        <div
+          className="box"
+          style={{
+            background: isLight ? "#fff" : "#000",
+            color: isLight ? "#000" : "#fff",
+          }}
+        >
+          <Hello title={title} />
+          <Timer isLight={isLight} changeColor={handleSetIsLight} />
+        </div>
+        <div className="box">
+          <Cornometr timeArr={timeArr} setTimeArr={setTimeArr} /> */}
+      {/* <TimerList> */}
+      {/* we call it this 'Children' in props */}
+      {/* {timeArr} */}
+      {/* </TimerList> */}
+      {/* </div>
+      </TestContext.Provider> */}
+      {/* here is for some value context */}
+      <TestContext.Provider
+        value={{
+          timeArr: timeArr,
+          setTimeArr: setTimeArr,
         }}
       >
-        <Hello title={title} />
-        <Timer isLight={isLight} changeColor={handleSetIsLight} />
-      </div>
-      <div className="box">
-        <Cornometr />
-        <TimerList>
+        <div
+          className="box"
+          style={{
+            background: isLight ? "#fff" : "#000",
+            color: isLight ? "#000" : "#fff",
+          }}
+        >
+          <Hello title={title} />
+          <Timer isLight={isLight} changeColor={handleSetIsLight} />
+        </div>
+        <div className="box">
+          <Cornometr />
+          {/* <TimerList> */}
           {/* we call it this 'Children' in props */}
-          {timeArr}
-        </TimerList>
-      </div>
+          {/* {timeArr} */}
+          {/* </TimerList> */}
+        <TimerList />
+        </div>
+      </TestContext.Provider>
     </div>
   );
 };

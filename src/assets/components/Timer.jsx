@@ -1,4 +1,5 @@
 import React from "react";
+import { TestContext } from "../context/testContext";
 let timeOut;
 // ----------------- First Mini Project----------------------
 class Timer extends React.Component {
@@ -15,6 +16,9 @@ class Timer extends React.Component {
       });
     }, 1000);
   };
+  // context in class components create start
+  static contextType = TestContext;
+  // context in class components create end
   handelStopInterval = () => {
     clearInterval(timeOut);
   };
@@ -28,8 +32,10 @@ class Timer extends React.Component {
   }
   render() {
     return (
-      <div>
-        <p>{this.state.count}</p>
+      // context in class components use start
+      <div style={{ background: this.context }}>
+        <p style={{ color: this.context }}>{this.state.count}</p>
+        {/*  context in class components use end */}
         <button
           className="btn"
           onClick={this.props.changeColor}
