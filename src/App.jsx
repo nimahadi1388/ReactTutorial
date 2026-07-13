@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react";
-import Hello from "./assets/components/Hello";
-import Timer from "./assets/components/Timer";
-import Cornometr from "./assets/components/Cornometr";
+import Hello from "./assets/components/Cornometr&Time/Hello";
+import Timer from "./assets/components/Cornometr&Time/Timer";
+import Cornometr from "./assets/components/Cornometr&Time/Cornometr";
 import { TestContext } from "./assets/context/testContext";
-import TimerList from "./assets/components/TimerList";
+import TimerList from "./assets/components/Cornometr&Time/TimerList";
 // import Cornometr from "./assets/components/Cornometr";
 // let intrval;
 // class App extends React.Component {
@@ -58,10 +58,13 @@ const App = () => {
     setIsLight(!isLight);
   };
   return (
-    <div className="components">
-      {/* context is TestContext.provider */}
-      {/* here is for single value context */}
-      {/* <TestContext.Provider value={'red'}>
+    <div>
+      <div className="componentsTutorial">
+        <h1>Tutorial projects</h1>
+        <div className="flexes">
+          {/* context is TestContext.provider */}
+          {/* here is for single value context */}
+          {/* <TestContext.Provider value={'red'}>
         <div
           className="box"
           style={{
@@ -74,38 +77,46 @@ const App = () => {
         </div>
         <div className="box">
           <Cornometr timeArr={timeArr} setTimeArr={setTimeArr} /> */}
-      {/* <TimerList> */}
-      {/* we call it this 'Children' in props */}
-      {/* {timeArr} */}
-      {/* </TimerList> */}
-      {/* </div>
-      </TestContext.Provider> */}
-      {/* here is for some value context */}
-      <TestContext.Provider
-        value={{
-          timeArr: timeArr,
-          setTimeArr: setTimeArr,
-        }}
-      >
-        <div
-          className="box"
-          style={{
-            background: isLight ? "#fff" : "#000",
-            color: isLight ? "#000" : "#fff",
-          }}
-        >
-          <Hello title={title} />
-          <Timer isLight={isLight} changeColor={handleSetIsLight} />
-        </div>
-        <div className="box">
-          <Cornometr />
           {/* <TimerList> */}
           {/* we call it this 'Children' in props */}
           {/* {timeArr} */}
           {/* </TimerList> */}
-        <TimerList />
+          {/* </div>
+      </TestContext.Provider> */}
+          {/* here is for some value context */}
+          <TestContext.Provider
+            value={{
+              timeArr: timeArr,
+              setTimeArr: setTimeArr,
+            }}
+          >
+            <div
+              className="box"
+              style={{
+                background: isLight ? "#fff" : "#000",
+                color: isLight ? "#000" : "#fff",
+              }}
+            >
+              <Hello title={title} />
+              <Timer isLight={isLight} changeColor={handleSetIsLight} />
+            </div>
+            <div className="box">
+              <Cornometr />
+              {/* <TimerList> */}
+              {/* we call it this 'Children' in props */}
+              {/* {timeArr} */}
+              {/* </TimerList> */}
+              <TimerList />
+            </div>
+          </TestContext.Provider>
         </div>
-      </TestContext.Provider>
+      </div>
+      <div className="componentsMiniProjectsC">
+        <h1>Mini Projects Course</h1>
+        <div className="flexes">
+              
+        </div>
+      </div>
     </div>
   );
 };

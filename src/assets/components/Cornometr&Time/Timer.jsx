@@ -1,5 +1,5 @@
 import React from "react";
-import { TestContext } from "../context/testContext";
+import { TestContext } from "../../context/testContext";
 let timeOut;
 // ----------------- First Mini Project----------------------
 class Timer extends React.Component {

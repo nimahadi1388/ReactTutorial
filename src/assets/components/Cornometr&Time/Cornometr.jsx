@@ -1,5 +1,5 @@
 import React from "react";
-import { TestContext } from "../context/testContext";
+import { TestContext } from "../../context/testContext";
 let timeOut;
 class Cornometr extends React.Component {
   constructor() {

@@ -41,7 +41,7 @@ p {
     filter: brightness(80%);
   }
 }
-.components {
+.flexes {
   display: flex;
   justify-content: center;
   gap: 4rem;
