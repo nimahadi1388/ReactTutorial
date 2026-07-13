@@ -19,7 +19,7 @@ p {
   border-radius: 30px;
   box-shadow: -4px 4px 20px -3px;
 }
-.btn {
+.btnTemCss {
   padding: 5px 10px;
   border: none;
   margin: 10px;
@@ -29,14 +29,14 @@ p {
   transition: all 0.3s ease;
 }
 .btn-main {
-  background: #a79c03;
+  background: #a79c03 !important;
   &:hover {
     filter: brightness(80%);
   }
 }
 .btn-secondry {
-  background: #ff5353;
-  color: #fff;
+  background: #ff5353 !important;
+  color: #fff !important;
   &:hover {
     filter: brightness(80%);
   }

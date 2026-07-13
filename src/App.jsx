@@ -1,4 +1,5 @@
-import { useContext, useEffect, useState } from "react";
+// import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Hello from "./assets/components/Cornometr&Time/Hello";
 import Timer from "./assets/components/Cornometr&Time/Timer";
 import Cornometr from "./assets/components/Cornometr&Time/Cornometr";
@@ -44,7 +45,7 @@ import TimerList from "./assets/components/Cornometr&Time/TimerList";
 //   }
 // }
 const App = () => {
-  const [title, setTitle] = useState("Hello dear user");
+  const [title] = useState("Hello dear user");
   const [isLight, setIsLight] = useState(false);
   const [timeArr, setTimeArr] = useState(["11:00:12"]);
   // const handleSetTitle = () => {
@@ -60,7 +61,7 @@ const App = () => {
   return (
     <div>
       <div className="componentsTutorial">
-        <h1>Tutorial projects</h1>
+        <h1 className="p-5">Tutorial projects</h1>
         <div className="flexes">
           {/* context is TestContext.provider */}
           {/* here is for single value context */}
@@ -111,10 +112,15 @@ const App = () => {
           </TestContext.Provider>
         </div>
       </div>
-      <div className="componentsMiniProjectsC">
+      <div className="componentsMiniProjectsC mt-5">
         <h1>Mini Projects Course</h1>
-        <div className="flexes">
-              
+        <div className="flexes mt-5">
+              <div className="box-1 border-4 border-white">
+                <div className="d-flex gap-1">
+                  <input className="form-control" type="text" placeholder="Enter your todo..."/>
+                  <button className="btn btn-success">Submit</button>
+                </div>
+              </div>
         </div>
       </div>
     </div>

@@ -71,13 +71,13 @@ class Cornometr extends React.Component {
           onClick={this.handleSaveTime}
           className="timer"
         >{`${h > 9 ? h : "0" + h}:${m > 9 ? m : "0" + m}:${s > 9 ? s : "0" + s}`}</p>
-        <button onClick={this.handleStartInterval} className="btn btn-main">
+        <button onClick={this.handleStartInterval} className="btnTemCss btn-main">
           Start
         </button>
-        <button onClick={this.handelStopInterval} className="btn btn-secondry">
+        <button onClick={this.handelStopInterval} className="btnTemCss btn-secondry">
           Stop
         </button>
-        <button onClick={this.resetInterval} className="btn">
+        <button onClick={this.resetInterval} className="btnTemCss">
           Reset
         </button>
         <div>
