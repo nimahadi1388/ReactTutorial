@@ -1,9 +1,9 @@
-// import { useContext, useEffect, useState } from "react";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Hello from "./assets/components/Cornometr&Time/Hello";
 import Timer from "./assets/components/Cornometr&Time/Timer";
 import Cornometr from "./assets/components/Cornometr&Time/Cornometr";
 import { TestContext } from "./assets/context/testContext";
+import { taskContext } from "./assets/context/TaskContext";
 import TimerList from "./assets/components/Cornometr&Time/TimerList";
 import TopForm from "./assets/components/TodoList/TopForm";
 import ItemTodo from "./assets/components/TodoList/ItemTodo";
@@ -50,6 +50,23 @@ const App = () => {
   const [title] = useState("Hello dear user");
   const [isLight, setIsLight] = useState(false);
   const [timeArr, setTimeArr] = useState(["11:00:12"]);
+  const [taskItems, setTaskItems] = useState([
+    {
+      id: 1,
+      title: "First Task",
+      isDone: false,
+    },
+    {
+      id: 2,
+      title: "Second Task",
+      isDone: true,
+    },
+    {
+      id: 3,
+      title: "Third Task",
+      isDone: false,
+    },
+  ]);
   // const handleSetTitle = () => {
   //   setTitle("Welcome to your website");
   // };
@@ -118,10 +135,17 @@ const App = () => {
         <h1>Mini Projects Course</h1>
         <div className="flexes mt-5">
           {/* Todo-List-Start */}
-          <div className="box shadow-none border-3 w-100">
-            <TopForm />
-            <ItemTodo />
-          </div>
+          <taskContext.Provider
+            value={{
+              taskItems,
+              setTaskItems,
+            }}
+          >
+            <div className="box shadow-none border-3 w-100">
+              <TopForm />
+              <ItemTodo />
+            </div>
+          </taskContext.Provider>
           {/* Todo-List-End */}
         </div>
       </div>
