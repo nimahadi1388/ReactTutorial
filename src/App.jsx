@@ -8,6 +8,7 @@ import TimerList from "./assets/components/Cornometr&Time/TimerList";
 import TopForm from "./assets/components/TodoList/TopForm";
 import ItemTodo from "./assets/components/TodoList/ItemTodo";
 import ParentComponent from "./assets/components/pureComponents/ParentComponent";
+import ParentsCompo from "./assets/components/GuessWord/ParentComponent";
 // import Cornometr from "./assets/components/Cornometr";
 // let intrval;
 // class App extends React.Component {
@@ -132,14 +133,11 @@ const App = () => {
             </div>
           </TestContext.Provider>
           {/* Context Tutorial End */}
-          {/* Pure Components Start */}
-          <ParentComponent/>
-          {/* Pure Components end */}
         </div>
       </div>
-      <div className="componentsMiniProjectsC mt-5">
+      <div className="componentsMiniProjectsC mt-5 container">
         <h1>Mini Projects Course</h1>
-        <div className="flexes mt-5">
+        <div className="flexes flex-wrap mt-5">
           {/* Todo-List-Start */}
           <taskContext.Provider
             value={{
@@ -153,6 +151,19 @@ const App = () => {
             </div>
           </taskContext.Provider>
           {/* Todo-List-End */}
+          {/* Guess Word Start */}
+          <div className="box w-100">
+            <ParentsCompo />
+          </div>
+          {/* Guess Word End */}
+        </div>
+      </div>
+      <div className="TestComponents mt-5">
+        <h1 className="p-5">Test Tutorial</h1>
+        <div className="flexes">
+          {/* Pure Components Start */}
+          <ParentComponent />
+          {/* Pure Components end */}
         </div>
       </div>
     </div>

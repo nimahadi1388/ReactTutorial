@@ -20,7 +20,7 @@ import { memo } from "react";
 const PureComponents = (props) => {
   return (
     <>
-      <h1>Pure Components: {props.name}</h1>
+      <p className="fs-4">Pure Components: {props.name}</p>
     </>
   );
 };
