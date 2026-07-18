@@ -7,6 +7,7 @@ import { taskContext } from "./assets/context/TaskContext";
 import TimerList from "./assets/components/Cornometr&Time/TimerList";
 import TopForm from "./assets/components/TodoList/TopForm";
 import ItemTodo from "./assets/components/TodoList/ItemTodo";
+import ParentComponent from "./assets/components/pureComponents/ParentComponent";
 // import Cornometr from "./assets/components/Cornometr";
 // let intrval;
 // class App extends React.Component {
@@ -82,6 +83,7 @@ const App = () => {
       <div className="componentsTutorial">
         <h1 className="p-5">Tutorial projects</h1>
         <div className="flexes">
+          {/* Context Tutorial Start */}
           {/* context is TestContext.provider */}
           {/* here is for single value context */}
           {/* <TestContext.Provider value={'red'}>
@@ -129,6 +131,10 @@ const App = () => {
               <TimerList />
             </div>
           </TestContext.Provider>
+          {/* Context Tutorial End */}
+          {/* Pure Components Start */}
+          <ParentComponent/>
+          {/* Pure Components end */}
         </div>
       </div>
       <div className="componentsMiniProjectsC mt-5">
